@@ -1,0 +1,26 @@
+<div class="box-body">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Mês</th>
+        <th>Ano</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="billingCycle in billingCycles">
+        <td>{{:: billingCycle.name }}</td>
+        <td>{{:: billingCycle.month }}</td>
+        <td>{{:: billingCycle.year }}</td>
+        <td style="width:100px;">
+          <button class="btn btn-warning" ng-click="showTabUpdate(billingCycle)"><i class="fa fa-pencil"></i></button>
+          <button class="btn btn-danger" ng-click="showTabDelete(billingCycle)"><i class="fa fa-trash-o"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="box-footer clearfix">
+   <paginator url="/#!/billingCycles" pages="{{ pages }}"></paginator>
+</div>
